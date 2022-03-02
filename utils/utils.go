@@ -1,15 +1,21 @@
 package utils
 
-func MaxInt(a, b int) int {
-	if a > b {
-		return a
+func MaxInt(arr ...int) int {
+	m := arr[0]
+	for i := 1; i < len(arr); i++ {
+		if arr[i] > m {
+			m = arr[i]
+		}
 	}
-	return b
+	return m
 }
 
-func MinInt(a, b int) int {
-	if a > b {
-		return b
+func MinInt(arr ...int) int {
+	m := arr[0]
+	for i := 1; i < len(arr); i++ {
+		if arr[i] < m {
+			m = arr[i]
+		}
 	}
-	return a
+	return m
 }
