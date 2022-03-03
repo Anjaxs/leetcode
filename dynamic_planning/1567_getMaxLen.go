@@ -1,5 +1,7 @@
 package leetcode
 
+import "leetcode/utils"
+
 func getMaxLen(nums []int) (ans int) {
 	pos, neg := 0, 0
 	for _, num := range nums {
@@ -17,14 +19,7 @@ func getMaxLen(nums []int) (ans int) {
 				pos, neg = 0, pos+1
 			}
 		}
-		ans = max(ans, pos)
+		ans = utils.MaxInt(ans, pos)
 	}
 	return
-}
-
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
