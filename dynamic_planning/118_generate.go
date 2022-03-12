@@ -1,4 +1,4 @@
-package leetcode
+package dynamic_planning
 
 func generate(numRows int) [][]int {
 	ans := make([][]int, numRows)

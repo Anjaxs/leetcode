@@ -1,4 +1,4 @@
-package leetcode
+package dynamic_planning
 
 func getRow(rowIndex int) []int {
 	prevRow := make([]int, rowIndex+1)

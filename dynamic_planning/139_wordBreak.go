@@ -1,4 +1,4 @@
-package leetcode
+package dynamic_planning
 
 func wordBreak(s string, wordDict []string) bool {
 	flag := make([]int, len(s)+1)

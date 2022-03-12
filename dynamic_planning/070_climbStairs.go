@@ -1,4 +1,4 @@
-package leetcode
+package dynamic_planning
 
 func climbStairs(n int) int {
 	a := []int{0, 1, 2}
