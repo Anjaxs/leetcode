@@ -1,6 +1,23 @@
 package dynamic_planning
 
-import "testing"
+import (
+	"leetcode/utils"
+	"testing"
+)
+
+func maxSubArray(nums []int) int {
+	sum := 0
+	maxSum := nums[0]
+	for i := 0; i < len(nums); i++ {
+		if sum > 0 {
+			sum += nums[i]
+		} else {
+			sum = nums[i]
+		}
+		maxSum = utils.MaxInt(sum, maxSum)
+	}
+	return maxSum
+}
 
 func TestMaxSubArray(t *testing.T) {
 	var tests = []struct {

@@ -1,6 +1,19 @@
 package dynamic_planning
 
-import "testing"
+import (
+	"leetcode/utils"
+	"testing"
+)
+
+func maxScoreSightseeingPair(values []int) int {
+	ans, mx := 0, values[0]+0
+	for j := 1; j < len(values); j++ {
+		ans = utils.MaxInt(ans, mx+values[j]-j)
+		// 边遍历边维护
+		mx = utils.MaxInt(mx, values[j]+j)
+	}
+	return ans
+}
 
 func TestMaxScoreSightseeingPair(t *testing.T) {
 	var tests = []struct {
