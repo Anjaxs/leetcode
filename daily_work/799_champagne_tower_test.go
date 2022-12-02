@@ -24,24 +24,22 @@ func champagneTower(poured int, query_row int, query_glass int) float64 {
 	return glassTower[query_row][query_glass]
 }
 
-type Input struct {
-	poured, queryRow, queryGlass int
-}
-
-type TestCase struct {
-	input Input
-	want  float64
-}
-
 func TestChampagneTower(t *testing.T) {
+	type Input struct {
+		poured, queryRow, queryGlass int
+	}
+	type TestCase struct {
+		Input
+		want float64
+	}
 	tests := []TestCase{
 		{Input{1, 1, 1}, 0},
 		{Input{2, 1, 1}, 0.5},
 		{Input{100000009, 33, 17}, 1},
 	}
 	for _, test := range tests {
-		if got := champagneTower(test.input.poured, test.input.queryRow, test.input.queryGlass); got != test.want {
-			t.Errorf("champagneTower(%v) = %v, expected %v", test.input, got, test.want)
+		if got := champagneTower(test.poured, test.queryRow, test.queryGlass); got != test.want {
+			t.Errorf("champagneTower(%v) = %v, expected %v", test.Input, got, test.want)
 		}
 	}
 }
