@@ -21,13 +21,6 @@ func nearestValidPoint(x int, y int, points [][]int) int {
 	return res
 }
 
-func abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
-}
-
 func TestNearestValidPoint(t *testing.T) {
 	type Input struct {
 		x, y   int

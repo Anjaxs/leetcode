@@ -24,13 +24,6 @@ func soupServings(n int) float64 {
 	return dp[n][n]
 }
 
-func max(a, b int) int {
-	if b > a {
-		return b
-	}
-	return a
-}
-
 func TestSoupServings(t *testing.T) {
 	tests := []struct {
 		input int
